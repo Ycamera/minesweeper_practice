@@ -528,8 +528,8 @@ header span {
 		top: min(8vmin, 80px);
 	}
 	.gameField {
-		width: 80vmin;
-		height: 80vmin;
+		width: 60vmin;
+		height: 60vmin;
 	}
 	.gameField .field span {
 		font-size: 5vmin;
