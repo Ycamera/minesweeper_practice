@@ -462,13 +462,13 @@ header span {
 	}
 
 	.content .navbar {
-		width: 70vmin;
-		font-size: min(4.5vmin, 2rem);
+		width: 80vmin;
+		font-size: min(5vmin, 2rem);
 		padding-top: min(10vmin, 40px);
 		margin-bottom: min(5vmin, 40px);
 	}
 	.navbar .info {
-		width: 17vmin;
+		width: 20vmin;
 	}
 
 	.navbar .info::before {
@@ -538,11 +538,11 @@ header span {
 
 @media screen and (max-width: 330px) {
 	.content .navbar {
-		width: 230px;
+		width: 260px;
 	}
 	.navbar .info {
-		font-size: 0.9rem;
-		width: 55px;
+		font-size: 1rem;
+		width: 65px;
 	}
 	.navbar .info::before {
 		height: 2px;
