@@ -1,597 +1,559 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Nunito:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Nunito:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&family=Roboto+Mono&display=swap");
 
 * {
-    font-family: 'Nunito', sans-serif;
+	font-family: "Nunito", sans-serif;
 }
 
 body {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
-    display: flex;
-    flex-direction: column;
-    align-items:center;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 
-    overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
+	overflow: hidden;
 }
 
 header {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    width: 100%;
-    height: 85px;
-    max-height: 85px;
-    
-    background-image: linear-gradient(rgb(68, 162, 255), #adf3ff);
-    box-shadow: 0px 4px 4px lightblue;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 85px;
+	max-height: 85px;
+
+	background-image: linear-gradient(rgb(68, 162, 255), #adf3ff);
+	box-shadow: 0px 4px 4px lightblue;
 }
 
 header span {
-    font-size:min(8vmin,2.4rem) ;
-    font-weight: bold;
-    margin:0 2px; 
+	font-size: min(8vmin, 2.4rem);
+	font-weight: bold;
+	margin: 0 2px;
 
-    transform: translateY(0);
-    animation: dropDown 1s ease-in both;
-    animation-delay: calc(0.07s * var(--i));
-
+	transform: translateY(0);
+	animation: dropDown 1s ease-in both;
+	animation-delay: calc(0.07s * var(--i));
 }
 
 @keyframes dropDown {
-    0%{
-        transform: translateY(-200px);
-    }
-    80% {
-        transform: translateY(5px);
-    }
-    100%{
-        transform: translateY(0);
-    }
+	0% {
+		transform: translateY(-200px);
+	}
+	80% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
-
 
 .content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    width: 100%;
-    height:100%;
-    
-    overflow: hidden;
-    user-select: none;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
 
-
+	overflow: hidden;
+	user-select: none;
 }
 
-
-
-
-
-
 .content .navbar {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-    width: 550px;
-    max-width: 550px;
-    padding-top:40px;
-    margin-bottom: 40px;
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 
-    font-size: 2rem;
+	width: 550px;
+	max-width: 550px;
+	padding-top: 40px;
+	margin-bottom: 40px;
 
-    overflow: hidden;
+	font-size: 2rem;
+
+	overflow: hidden;
 }
 
 .navbar .info {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
 
-    width:130px;
-    max-width: 130px;
+	width: 130px;
+	max-width: 130px;
 
-    font-weight: bold;
-
+	font-weight: bold;
 }
 
 .navbar .info span {
-    animation: showUp 1.5s ease-out both;
-    animation-delay: calc(1.5s + 0.08s * var(--i));
+	animation: showUp 1.5s ease-out both;
+	animation-delay: calc(1.5s + 0.08s * var(--i));
 }
 
 @keyframes showUp {
-    0% {
-        transform: translateY(100px)
-    }
-    40% {
-        transform: translateY(-20px);
-    }
+	0% {
+		transform: translateY(100px);
+	}
+	40% {
+		transform: translateY(-20px);
+	}
 
-    80%,100% {
-        transform: translateY(-5px);
-    }
+	80%,
+	100% {
+		transform: translateY(-5px);
+	}
 }
-
 
 .navbar .info::before {
-    content: "";
+	content: "";
 
-    position: absolute;
-    width: 110%;
-    height:4px;
-    max-height:4px;
+	position: absolute;
+	width: 110%;
+	height: 4px;
+	max-height: 4px;
 
-    left:50%;
-    transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
 
-    bottom: 2px;;
+	bottom: 2px;
 
-    filter: drop-shadow(0px 3px 2px #93ccec);
+	filter: drop-shadow(0px 3px 2px #93ccec);
 
-    z-index: 1;
-    background-color: dodgerblue;
+	z-index: 1;
+	background-color: dodgerblue;
 }
-
-
 
 .gameField {
-    position: relative;
-    display: flex;
-    text-align: center;
-    justify-content: center;
+	position: relative;
+	display: flex;
+	text-align: center;
+	justify-content: center;
 
-    min-width: 470px;
-    min-height: 470px;
-    width: 600px;
-    height: 600px;
-    max-width: 600px;
-    max-height: 600px;
+	min-width: 470px;
+	min-height: 470px;
+	width: 600px;
+	height: 600px;
+	max-width: 600px;
+	max-height: 600px;
 
-    background-color: rgb(18, 57, 139);
-    padding: 10px;
-    
-    box-shadow: 5px 5px 5px gray;
+	background-color: rgb(18, 57, 139);
+	padding: 10px;
 
-    z-index: 0;
-    
+	box-shadow: 5px 5px 5px gray;
+
+	z-index: 0;
 }
 
-.gameField .field{
-    position: relative;
-    display:grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    grid-gap: 4px;  
+.gameField .field {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(9, 1fr);
+	grid-gap: 4px;
 
-    width: 100%;
-    
+	width: 100%;
 }
-
-
 
 .gameField .field span {
-    position: relative;
-    background-color:white;
-    background-image: linear-gradient(to bottom right, dodgerblue 0%, lightblue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 35px;
-    font-weight: bold;
-    color: black;
-    box-shadow:0 0 4px rgb(18, 57, 139);
+	position: relative;
+	background-color: white;
+	background-image: linear-gradient(
+		to bottom right,
+		dodgerblue 0%,
+		lightblue
+	);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    transition: transform 0.5s ease-in;
+	font-size: 35px;
+	font-weight: bold;
+	color: black;
+	box-shadow: 0 0 4px rgb(18, 57, 139);
+
+	transition: transform 0.5s ease-in;
 }
 
 .gameField .field span.notOpened:hover {
-    opacity: 0.8;
-
+	opacity: 0.8;
 }
 
-.gameField #announce{
+.gameField #announce {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    position:absolute;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 
-    bottom:min(0.6vmin,5px);
-    
-    overflow: hidden;
-    z-index: -1;
+	bottom: min(0.6vmin, 5px);
+
+	overflow: hidden;
+	z-index: -1;
 }
 
-.gameField #announce.active{
-    animation: zIndexOff 0.5s ease-in forwards;
+.gameField #announce.active {
+	animation: zIndexOff 0.5s ease-in forwards;
 }
 
 @keyframes zIndexOff {
-    0% {
-        z-index: 100;
-    }
-    99% {
-        z-index: 100;
-    }
-    100% {
-        z-index: -1;
-    }
+	0% {
+		z-index: 100;
+	}
+	99% {
+		z-index: 100;
+	}
+	100% {
+		z-index: -1;
+	}
 }
 
-
-
 .gameField #clear {
-    position: absolute;
-    display: flex;
-    justify-content:center;
-    text-align: center;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 
-    width: 100%;
-    height: 17vmin;
-    max-height: 110px;
+	width: 100%;
+	height: 17vmin;
+	max-height: 110px;
 
-    transform:translateX(-120%);
-    transition: 0.5s linear both;
-    
-    box-shadow:0 3px 5px black;
+	transform: translateX(-120%);
+	transition: 0.5s linear both;
 
+	box-shadow: 0 3px 5px black;
 
-    background-image: linear-gradient(rgb(61, 105, 250), rgb(59, 157, 255), rgb(29, 82, 255) );
+	background-image: linear-gradient(
+		rgb(61, 105, 250),
+		rgb(59, 157, 255),
+		rgb(29, 82, 255)
+	);
 }
 
 .gameField #clear.active {
-
-    animation: clearbarReady 0.5s ease-in both;
+	animation: clearbarReady 0.5s ease-in both;
 }
 @keyframes clearbarReady {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-120%);
-    }
-
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-120%);
+	}
 }
 
 #announce span {
-    position: relative;
-    display: flex;
-    align-items: center;
+	position: relative;
+	display: flex;
+	align-items: center;
 
-    font-size: min(13vmin,80px);
-    font-weight:800;
+	font-size: min(13vmin, 80px);
+	font-weight: 800;
 
-    color:yellow;
-    filter: drop-shadow(3px min(1vmin,5px) rgb(11, 11, 65));
-    margin:0 5px;
+	color: yellow;
+	filter: drop-shadow(3px min(1vmin, 5px) rgb(11, 11, 65));
+	margin: 0 5px;
 
-
-    bottom: min(0.5vmin,5px);
-    opacity: 1;
-    transform: rotate(var(--deg)) translateY(calc(min(2vmin,11px) * var(--y)));    
+	bottom: min(0.5vmin, 5px);
+	opacity: 1;
+	transform: rotate(var(--deg)) translateY(calc(min(2vmin, 11px) * var(--y)));
 }
 .gameField #announce.appear {
-    z-index: 100;
-    animation: none;
+	z-index: 100;
+	animation: none;
 }
 
-.gameField #clear.appear{
-    animation: clearbar 0.7s ease-in both;
+.gameField #clear.appear {
+	animation: clearbar 0.7s ease-in both;
 }
 @keyframes clearbar {
-    0% {
-        transform: translateX(120%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+	0% {
+		transform: translateX(120%);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
 .gameField #announce.appear #clear.appear span {
-
-    animation: clear 0.4s ease-out both;
-    animation-delay: calc(0.15s + 0.1s * var(--i));
-    transform: rotate(var(--deg)) translateY(calc(min(2vmin,11px) * var(--y)));
+	animation: clear 0.4s ease-out both;
+	animation-delay: calc(0.15s + 0.1s * var(--i));
+	transform: rotate(var(--deg)) translateY(calc(min(2vmin, 11px) * var(--y)));
 }
 @keyframes clear {
-    0%{
-        opacity: 0;
-        transform: scale(0) rotate(90deg)  translateX(1000%);
-    }
-    80%{
-        opacity: 1;
-        transform: scale(1) rotate(var(--deg)) translateX(-10px) translateY(calc(min(1.5vmin,11px) * var(--y))) ;
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1) rotate(var(--deg)) translateY(calc(min(1.5vmin,11px) * var(--y)));
-    }
-
+	0% {
+		opacity: 0;
+		transform: scale(0) rotate(90deg) translateX(1000%);
+	}
+	80% {
+		opacity: 1;
+		transform: scale(1) rotate(var(--deg)) translateX(-10px)
+			translateY(calc(min(1.5vmin, 11px) * var(--y)));
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) rotate(var(--deg))
+			translateY(calc(min(1.5vmin, 11px) * var(--y)));
+	}
 }
 
-
 .gameField #boom {
-    position: absolute;
-    display: flex;
-    justify-content:center;
-    text-align: center;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 
-    width: 100%;
-    height: 17vmin;
-    max-height: 110px;
+	width: 100%;
+	height: 17vmin;
+	max-height: 110px;
 
-    transition: 0.5s linear both;
-    transform:translateX(-120%);
-    
+	transition: 0.5s linear both;
+	transform: translateX(-120%);
 }
 
 .gameField #boom.active {
-
-    animation: boomReady 0.5s ease-in both;
+	animation: boomReady 0.5s ease-in both;
 }
 @keyframes boomReady {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-120%);
-    }
-
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-120%);
+	}
 }
-.gameField #boom.appear{
-    animation: boombar 0.7s ease-in both;
+.gameField #boom.appear {
+	animation: boombar 0.7s ease-in both;
 }
 @keyframes boombar {
-    0% {
-        transform: translateY(120%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+	0% {
+		transform: translateY(120%);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
 .gameField #announce.appear #boom.appear span {
-
-    animation: boom 0.4s ease-out both;
-    animation-delay: calc(0.15s + 0.1s * var(--i));
-    transform: rotate(var(--deg)) translateY(calc(min(2vmin,11px) * var(--y)));
+	animation: boom 0.4s ease-out both;
+	animation-delay: calc(0.15s + 0.1s * var(--i));
+	transform: rotate(var(--deg)) translateY(calc(min(2vmin, 11px) * var(--y)));
 }
 @keyframes boom {
-    0%{
-        opacity: 0;
-        transform: scale(0) translateY(100%);
-    }
-    50%{
-        opacity: 1;
-        font-size: min(18vmin,150px);
-        transform: scale(1) rotate(var(--deg)) translateY(calc(min(2vmin,15px) * var(--y))) ;
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1) rotate(var(--deg)) translateY(calc(min(1.5vmin,11px) * var(--y)));
-    }
-
+	0% {
+		opacity: 0;
+		transform: scale(0) translateY(100%);
+	}
+	50% {
+		opacity: 1;
+		font-size: min(18vmin, 150px);
+		transform: scale(1) rotate(var(--deg))
+			translateY(calc(min(2vmin, 15px) * var(--y)));
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) rotate(var(--deg))
+			translateY(calc(min(1.5vmin, 11px) * var(--y)));
+	}
 }
-
-
-
-
 
 .flag {
-    background-size: 100%;
-    background-position: center;
+	background-size: 100%;
+	background-position: center;
 }
 .bomb {
-    background-size: 90%;
-    background-position: center;
+	background-size: 90%;
+	background-position: center;
 }
 
-
-
-
 .option {
-    display:flex;
-    justify-content:center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    width:60%;
-    margin: 40px 0;
+	width: 60%;
+	margin: 40px 0;
 
-    font-weight: bold;
-    font-size: 2rem;
-
-    
+	font-weight: bold;
+	font-size: 2rem;
 }
 
 .option #restart {
-    position: relative;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    
-    width: 200px;
-    height: 70px;
-    min-width: 110px;
-    min-height: 38px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    max-width: 200px;
-    max-height: 70px;
+	width: 200px;
+	height: 70px;
+	min-width: 110px;
+	min-height: 38px;
 
-    background-image: linear-gradient(to bottom right, rgb(250, 232, 69) 60%, rgb(211, 211, 211));
-    border-radius: 10px 10px 20% 20%;
-    box-shadow: 2px  5px 5px gray;
+	max-width: 200px;
+	max-height: 70px;
 
-    color: rgb(24, 24, 107);
+	background-image: linear-gradient(
+		to bottom right,
+		rgb(250, 232, 69) 60%,
+		rgb(211, 211, 211)
+	);
+	border-radius: 10px 10px 20% 20%;
+	box-shadow: 2px 5px 5px gray;
 
-    cursor: pointer;
-    overflow: hidden;
+	color: rgb(24, 24, 107);
+
+	cursor: pointer;
+	overflow: hidden;
 }
 
-#restart span{
-    transform: translateY(0);
-    animation: restartPop 0.4s ease-in-out both;
-    animation-delay: calc(2.5s + 0.09s * var(--i))
+#restart span {
+	transform: translateY(0);
+	animation: restartPop 0.4s ease-in-out both;
+	animation-delay: calc(2.5s + 0.09s * var(--i));
 }
 
 @keyframes restartPop {
-    0% {
-        transform: translateY(-50px);
-    }
+	0% {
+		transform: translateY(-50px);
+	}
 
-    50% {
-        transform: translateY(5px)
-    }
+	50% {
+		transform: translateY(5px);
+	}
 
-    100% {
-        transform: translateY(0)
-    }
+	100% {
+		transform: translateY(0);
+	}
 }
 
 .option #restart:active {
-    box-shadow: none;
-    top:5px;
+	box-shadow: none;
+	top: 5px;
 }
 
+@media screen and (max-width: 768px), (max-height: 1100px) {
+	header {
+		height: 15vmin;
+	}
+	.gameField {
+		min-width: 200px;
+		min-height: 200px;
+		width: 80vmin;
+		height: 80vmin;
 
+		padding: min(1.5vmin, 10px);
+	}
+	.gameField .field {
+		grid-gap: min(0.8vmin, 4px);
+	}
+	.gameField .field span {
+		font-size: 5vmin;
+	}
 
+	.content .navbar {
+		width: 70vmin;
+		font-size: min(4.5vmin, 2rem);
+		padding-top: min(10vmin, 40px);
+		margin-bottom: min(5vmin, 40px);
+	}
+	.navbar .info {
+		width: 17vmin;
+	}
 
+	.navbar .info::before {
+		height: 0.5vmin;
+		bottom: 2px;
+	}
 
+	.option {
+		margin: min(5vmin, 40px) 0;
+	}
+	.option #restart {
+		width: 27vmin;
+		height: 10vmin;
 
-
-@media screen and (max-width: 768px), (max-height: 1100px){
-    header {
-        height:15vmin;
-    }
-    .gameField {
-        min-width:200px;
-        min-height:200px;
-        width: 80vmin;
-        height: 80vmin;
-
-        padding:min(1.5vmin,10px);
-    }
-    .gameField .field {
-        grid-gap:min(0.8vmin,4px);
-    }
-    .gameField .field span{
-        font-size: 5vmin;
-    }
-
-    .content .navbar {
-        width: 70vmin;
-        font-size: min(4.5vmin,2rem);
-        padding-top: min(10vmin,40px);
-        margin-bottom: min(5vmin,40px);
-
-    }
-    .navbar .info {
-        width: 17vmin;
-    }
-
-    .navbar .info::before {
-        height:0.5vmin;
-        bottom:2px;
-    }
-    
-    .option {
-        margin:min(5vmin,40px) 0;
-    }
-    .option #restart {
-        width: 27vmin;
-        height: 10vmin;
-
-        font-size: min(5vmin,2rem)
-    }
-
+		font-size: min(5vmin, 2rem);
+	}
 }
 
 @media screen and (max-height: 1100px) {
-    
-    header {
-        height:8vh;
-    }
+	header {
+		height: 8vh;
+	}
 
-    .content {
-        top:min(5vh,50px);
-    }
+	.content {
+		top: min(5vh, 50px);
+	}
 
-    .content .navbar {
-        width: 60vmin;
+	.content .navbar {
+		width: 60vmin;
 
-        padding-top: min(3vmin,40px);
-        margin-bottom: min(3vmin,40px);
-    }
-    .navbar .info {
-        font-size: min(4vmin,2rem);
-        width: 15vmin;
-    }
+		padding-top: min(3vmin, 40px);
+		margin-bottom: min(3vmin, 40px);
+	}
+	.navbar .info {
+		font-size: min(4vmin, 2rem);
+		width: 15vmin;
+	}
 
-    .gameField {
+	.gameField {
+		width: 50vmin;
+		height: 50vmin;
+	}
 
-        width: 50vmin;
-        height: 50vmin;
-    }
-
-    .gameField .field span{
-        font-size: 3.5vmin;
-    }
-    .gameField #clear {
-        height: 12vmin;
-    }
-    #announce span {
-        font-size: min(7vmin,100px);   
-    }
+	.gameField .field span {
+		font-size: 3.5vmin;
+	}
+	.gameField #clear {
+		height: 12vmin;
+	}
+	#announce span {
+		font-size: min(7vmin, 100px);
+	}
 }
 
-@media screen and (max-width: 768px) and (max-height: 1100px){
-    .content {
-        top:min(8vmin,80px);
-    }
-    .gameField {
-
-        width: 80vmin;
-        height: 80vmin;
-    }
-    .gameField .field span{
-        font-size: 5vmin;
-    }
+@media screen and (max-width: 768px) and (max-height: 1100px) {
+	.content {
+		top: min(8vmin, 80px);
+	}
+	.gameField {
+		width: 80vmin;
+		height: 80vmin;
+	}
+	.gameField .field span {
+		font-size: 5vmin;
+	}
 }
 
 @media screen and (max-width: 330px) {
-    .content .navbar {
-        width: 230px;   
+	.content .navbar {
+		width: 230px;
+	}
+	.navbar .info {
+		font-size: 0.9rem;
+		width: 55px;
+	}
+	.navbar .info::before {
+		height: 2px;
+	}
 
-    }
-    .navbar .info {
-        font-size: 0.9rem;
-        width: 55px;
-    }
-    .navbar .info::before {
-        height:2px;
-    }
-
-    .option #restart {
-        font-size: 1.2rem;
-    }
+	.option #restart {
+		font-size: 1.2rem;
+	}
 }
 @media screen and (max-height: 400px) {
-    .content {
-        top:30px;
-    }
+	.content {
+		top: 30px;
+	}
 }
