@@ -534,6 +534,16 @@ header span {
 	.gameField .field span {
 		font-size: 5vmin;
 	}
+	.content .navbar {
+		width: 70vmin;
+
+		padding-top: min(3vh, 40px);
+		margin-bottom: min(5vmin, 40px);
+	}
+	.navbar .info {
+		font-size: min(5vmin, 2rem);
+		width: 20vmin;
+	}
 }
 
 @media screen and (max-width: 330px) {
