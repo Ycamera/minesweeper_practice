@@ -196,8 +196,10 @@ function bombClick(event) {
 	openEmpty(event.target.id);
 }
 
-const bombImage = "url('./images/bomb.001.png')";
-const flagImage = "url('./images/flag.001.png')";
+const bombImage =
+	"url('https://ycamera.github.io/minesweeper_project/images/bomb.001.png')";
+const flagImage =
+	"url('https://ycamera.github.io/minesweeper_project/images/flag.001.png')";
 const gradientImage =
 	"linear-gradient(to bottom right, dodgerblue 0%, lightblue)";
 
