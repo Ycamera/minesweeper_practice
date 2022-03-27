@@ -499,7 +499,7 @@ header span {
 	.content .navbar {
 		width: 60vmin;
 
-		padding-top: min(3vmin, 40px);
+		padding-top: min(3vh, 40px);
 		margin-bottom: min(3vmin, 40px);
 	}
 	.navbar .info {
