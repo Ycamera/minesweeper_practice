@@ -447,8 +447,8 @@ header span {
 		height: 15vmin;
 	}
 	.gameField {
-		min-width: 200px;
-		min-height: 200px;
+		min-width: 100px;
+		min-height: 100px;
 		width: 80vmin;
 		height: 80vmin;
 
@@ -528,11 +528,11 @@ header span {
 		top: min(8vmin, 80px);
 	}
 	.gameField {
-		width: 60vmin;
-		height: 60vmin;
+		width: 65vmin;
+		height: 65vmin;
 	}
 	.gameField .field span {
-		font-size: 5vmin;
+		font-size: 4vmin;
 	}
 	.content .navbar {
 		width: 70vmin;
