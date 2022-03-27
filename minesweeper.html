@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="./minesweeper.css">
+        <title>Minesweeper</title>
+    </head>
+    
+    <body>
+        <header>
+            <span style = '--i:1'>M</span>
+            <span style = '--i:2'>i</span>
+            <span style = '--i:3'>n</span>
+            <span style = '--i:4'>e</span>
+            <span style = '--i:5'>s</span>
+            <span style = '--i:6'>w</span>
+            <span style = '--i:7'>e</span>
+            <span style = '--i:8'>e</span>
+            <span style = '--i:9'>p</span>
+            <span style = '--i:10'>e</span>
+            <span style = '--i:11'>r</span>
+
+
+        </header>
+        
+        <div class="content">
+            <div class="navbar">
+                
+                <div id="flags" class="info">
+                    <span class="position" style = '--i:1'>Flag</span>
+                    <span class="position" id="numberOfFlags" style = '--i:2'>10</span>
+                </div>
+
+                <div id="time" class="info">
+                    <span class="position" style = '--i:3'>Time</span>
+                    <span class="position" id="timeclock" style = '--i:4'>0</span>
+                </div>
+                
+
+            </div>
+
+            <div class="gameField" oncontextmenu="return false">
+                <div id ="announce">
+
+                    <div id="clear">
+                        <span style='--i:1; --deg:-20deg; --y:1.5;'>C</span>
+                        <span style='--i:2; --deg:-10deg; --y:0;'>L</span>
+                        <span style='--i:3; --deg:0deg; --y:-0.2;'>E</span>
+                        <span style='--i:4; --deg:10deg; --y:-0;'>A</span>
+                        <span style='--i:5; --deg:20deg; --y:1.5;'>R</span>
+                    </div>
+
+                    <div id="boom">
+                        <span style='--i:1; --deg:-15deg; --y:1;'>B</span>
+                        <span style='--i:2; --deg:-5deg; --y:0;'>O</span>
+                        <span style='--i:3; --deg:5deg; --y:-0;'>O</span>
+                        <span style='--i:4; --deg:15deg; --y:1;'>M</span>
+                        <span style='--i:5; --deg:20deg; --y:2;'>!</span>
+                    </div>
+
+                </div>
+                <div class="field">
+                    <span id='f00'></span>
+                    <span id='f01'></span>
+                    <span id='f02'></span>
+                    <span id='f03'></span>
+                    <span id='f04'></span>
+                    <span id='f05'></span>
+                    <span id='f06'></span>
+                    <span id='f07'></span>
+                    <span id='f08'></span>
+                    <span id='f10'></span>
+                    <span id='f11'></span>
+                    <span id='f12'></span>
+                    <span id='f13'></span>
+                    <span id='f14'></span>
+                    <span id='f15'></span>
+                    <span id='f16'></span>
+                    <span id='f17'></span>
+                    <span id='f18'></span>
+                    <span id='f20'></span>
+                    <span id='f21'></span>
+                    <span id='f22'></span>
+                    <span id='f23'></span>
+                    <span id='f24'></span>
+                    <span id='f25'></span>
+                    <span id='f26'></span>
+                    <span id='f27'></span>
+                    <span id='f28'></span>
+                    <span id='f30'></span>
+                    <span id='f31'></span>
+                    <span id='f32'></span>
+                    <span id='f33'></span>
+                    <span id='f34'></span>
+                    <span id='f35'></span>
+                    <span id='f36'></span>
+                    <span id='f37'></span>
+                    <span id='f38'></span>
+                    <span id='f40'></span>
+                    <span id='f41'></span>
+                    <span id='f42'></span>
+                    <span id='f43'></span>
+                    <span id='f44'></span>
+                    <span id='f45'></span>
+                    <span id='f46'></span>
+                    <span id='f47'></span>
+                    <span id='f48'></span>
+                    <span id='f50'></span>
+                    <span id='f51'></span>
+                    <span id='f52'></span>
+                    <span id='f53'></span>
+                    <span id='f54'></span>
+                    <span id='f55'></span>
+                    <span id='f56'></span>
+                    <span id='f57'></span>
+                    <span id='f58'></span>
+                    <span id='f60'></span>
+                    <span id='f61'></span>
+                    <span id='f62'></span>
+                    <span id='f63'></span>
+                    <span id='f64'></span>
+                    <span id='f65'></span>
+                    <span id='f66'></span>
+                    <span id='f67'></span>
+                    <span id='f68'></span>
+                    <span id='f70'></span>
+                    <span id='f71'></span>
+                    <span id='f72'></span>
+                    <span id='f73'></span>
+                    <span id='f74'></span>
+                    <span id='f75'></span>
+                    <span id='f76'></span>
+                    <span id='f77'></span>
+                    <span id='f78'></span>
+                    <span id='f80'></span>
+                    <span id='f81'></span>
+                    <span id='f82'></span>
+                    <span id='f83'></span>
+                    <span id='f84'></span>
+                    <span id='f85'></span>
+                    <span id='f86'></span>
+                    <span id='f87'></span>
+                    <span id='f88'></span>
+                </div>
+
+            </div>
+
+
+
+            <div class="option">
+                <div id = 'restart'>
+                    <span style="--i:1">R</span>
+                    <span style="--i:2">e</span>
+                    <span style="--i:3">s</span>
+                    <span style="--i:4">t</span>
+                    <span style="--i:5">a</span>
+                    <span style="--i:6">r</span>
+                    <span style="--i:7">t</span>
+
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+    <script type='text/javascript' src="./minesweeper.js"></script>
+
+</html>
