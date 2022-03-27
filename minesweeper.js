@@ -208,7 +208,7 @@ function flagClick(event) {
 	flagNum = document.getElementById("numberOfFlags");
 
 	if (f.className.split(" ").includes("flag")) {
-		f.style.backgroundImage = `${flagImage}`;
+		f.style.backgroundImage = `${flagImage},${gradientImage}`;
 		flagNum.innerHTML = Number(flagNum.innerHTML) - 1;
 	} else {
 		f.style.backgroundImage = gradientImage;
