@@ -197,7 +197,7 @@ function bombClick(event) {
 }
 
 const bombImage = "url('./images/bomb.001.png')";
-const flagImage = "url('./images/Flag.001.png')";
+const flagImage = "url('./images/flag.001.png')";
 const gradientImage =
 	"linear-gradient(to bottom right, dodgerblue 0%, lightblue)";
 
