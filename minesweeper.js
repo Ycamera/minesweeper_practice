@@ -378,6 +378,7 @@ function numberOfBombsSet() {
 		}
 	}
 	start();
+	return false
 }
 
 //ゲームの進行管理ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー

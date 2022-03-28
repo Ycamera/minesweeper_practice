@@ -33,17 +33,21 @@
 					<div id="bombSet">
 						<div id="numberOfBombs">
 							<span id="bombimage">Bomb</span>
-							<div id="numArea">
-								<span class="numUpDown" id="numDown"></span>
-								<input
-									id="num"
-									type="number"
-									min="1"
-									max="80"
-									value="10"
-								/>
-								<span class="numUpDown" id="numUp"></span>
-							</div>
+							<form onsubmit="return numberOfBombsSet()">
+								<div id="numArea">
+									<span class="numUpDown" id="numDown"></span>
+
+									<input
+										id="num"
+										type="number"
+										min="1"
+										max="80"
+										value="10"
+									/>
+
+									<span class="numUpDown" id="numUp"></span>
+								</div>
+							</form>
 
 							<span id="set">Set</span>
 						</div>
