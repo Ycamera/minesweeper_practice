@@ -827,6 +827,13 @@ header #numberOfBombs #set:active {
 	}
 }
 
+
+@media screen and (max-width: 500px) {
+	header #bombSet {
+		left: 0;
+		right: 0;
+		margin:0 auto;
+}
 @media screen and (max-width: 330px) {
 	header #menuButton::before {
 		top: -5px;
