@@ -85,7 +85,7 @@ header #menu {
 
 header #menu #button {
 	position: absolute;
-	right: min(1vmin, 10px);
+	right: 10px;
 	width: 10vmin;
 	height: 10vmin;
 	max-width: 50px;
@@ -819,8 +819,8 @@ header #numberOfBombs #set:active {
 
 @media screen and (max-width: 768px) and (max-height: 665px) {
 	.gameField {
-		width: 65vmin;
-		height: 65vmin;
+		width: 70vmin;
+		height: 70vmin;
 	}
 	.gameField .field span {
 		font-size: 4vmin;
