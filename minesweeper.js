@@ -265,7 +265,6 @@ function boomIdArray() {
 	}
 	return array;
 }
-
 function boom() {
 	let delay = 10;
 
@@ -294,12 +293,99 @@ function boom() {
 	}
 }
 
+//右上のメニューから爆弾をセット
+document.getElementById("set").addEventListener("click", numberOfBombsSet);
+document.getElementById("num").addEventListener("change", numberOfBombsChange);
+document
+	.getElementById("numDown")
+	.addEventListener("mousedown", numberOfbombsDown);
+document.getElementById("numUp").addEventListener("mousedown", numberOfbombsUp);
+document.addEventListener("click", function (e) {
+	let menu = document.getElementById("menu");
+	if (menu.classList.value === "active" && !e.target.closest("#menu")) {
+		hideMenu();
+	}
+});
+
+//メニューボタンをクリック　#menuにactiveクラスを付加
+document.getElementById("button").addEventListener("click", function () {
+	let menu = document.getElementById("menu");
+
+	if (menu.classList.value === "active") {
+		hideMenu();
+	} else {
+		menu.classList.add("active");
+	}
+});
+//メニューを隠す
+function hideMenu() {
+	menu.classList.remove("active");
+	setTimeout(function () {
+		document.getElementById("num").value = numberOfbombsToSet;
+	}, 100);
+}
+
+//bombsの数を増加
+function numberOfbombsUp() {
+	let number = document.getElementById("num");
+	up();
+
+	function up() {
+		n = Number(number.value);
+		if (typeof n === "number" && n < 80) number.value = n + 1;
+	}
+}
+//bombsの数を減少
+function numberOfbombsDown() {
+	let number = document.getElementById("num");
+	down();
+
+	function down() {
+		n = Number(number.value);
+		if (typeof n === "number" && n > 1) number.value = n - 1;
+	}
+}
+
+//爆弾セットの下限上限を1-80にする
+function numberOfBombsChange() {
+	let number = document.getElementById("num");
+	let n = number.value;
+
+	if (typeof Number(n) === "number") {
+		if (n < 1) {
+			number.value = 1;
+		} else if (n > 80) {
+			number.value = 80;
+		} else {
+		}
+	}
+}
+
+//表示された数の爆弾をセット
+function numberOfBombsSet() {
+	let number = document.getElementById("num");
+	let n = number.value;
+
+	if (typeof Number(n) === "number") {
+		if (n < 1) {
+			numberOfbombsToSet = 1;
+			number.value = 1;
+		} else if (n > 80) {
+			numberOfbombsToSet = 80;
+			number.value = 80;
+		} else {
+			numberOfbombsToSet = n;
+		}
+	}
+	start();
+}
+
 //ゲームの進行管理ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 let restartReady = true; //リスタート時に不必要な爆発処理を防ぐ
 
 //セットする爆弾の数
-const numberOfbombsToSet = 10;
+let numberOfbombsToSet = 10;
 
 //クリア！
 function clear(event) {
@@ -323,6 +409,7 @@ function endEffect(id) {
 
 //ゲームを開始
 function start() {
+	hideMenu();
 	restartReady = true;
 	opened = [];
 	areaOfBombs = NaN;

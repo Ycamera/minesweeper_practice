@@ -31,9 +31,11 @@ header {
 
 	background-image: linear-gradient(rgb(68, 162, 255), #adf3ff);
 	box-shadow: 0px 4px 4px lightblue;
+
+	z-index: 5;
 }
 
-header span {
+header #title span {
 	font-size: min(8vmin, 2.4rem);
 	font-weight: bold;
 	margin: 0 2px;
@@ -53,6 +55,264 @@ header span {
 	100% {
 		transform: translateY(0);
 	}
+}
+header #container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+}
+header #menu {
+	position: absolute;
+	right: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header #menu #button {
+	position: absolute;
+	right: min(1vmin, 10px);
+	width: 10vmin;
+	height: 10vmin;
+	max-width: 50px;
+	max-height: 50px;
+	border-radius: min(1vmin, 20px);
+	box-shadow: 0 0px 10px rgb(64, 152, 240);
+	background-image: linear-gradient(rgb(68, 162, 255), #adf3ff);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+}
+
+#menuButton,
+#menuButton::before,
+#menuButton::after {
+	position: relative;
+	height: min(0.7vmin, 3px);
+	background-color: white;
+
+	transition: 0.4s ease;
+}
+header #menuButton {
+	width: 60%;
+}
+header #menuButton::before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	width: 85%;
+	left: 0;
+	right: 0;
+
+	margin: 0 auto;
+}
+
+header #menuButton::after {
+	content: "";
+	position: absolute;
+	top: 10px;
+	width: 85%;
+
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+header #menu.active #menuButton {
+	transform: rotate(45deg);
+}
+header #menu.active #menuButton::before {
+	top: 0;
+	width: 100%;
+	transform: rotate(-90deg);
+}
+
+header #menu.active #menuButton::after {
+	top: 0;
+	width: 100%;
+	transform: rotate(-90deg);
+}
+
+header #bombSet {
+	position: absolute;
+
+	width: 0px;
+	height: 0px;
+	max-width: 300px;
+	right: 10px;
+
+	z-index: -1;
+	overflow: hidden;
+
+	transition: 1s;
+	transition-delay: 0.2s;
+	transform: translateY(-500px);
+}
+header #menu.active #bombSet {
+	position: absolute;
+
+	width: 92%;
+	height: 300px;
+
+	z-index: -1;
+
+	transform: translateY(65%);
+	transition: 0s ease;
+}
+
+header #numberOfBombs {
+	position: relative;
+
+	width: 100%;
+	height: 100px;
+	border-radius: 20px;
+
+	background-image: linear-gradient(
+		to top,
+		rgb(184, 241, 255) 10%,
+		rgb(162, 227, 250)
+	);
+	z-index: -1;
+
+	transition: 0.3s ease-in-out;
+	transform: translateY(-500px);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: 800;
+}
+
+header #menu.active #bombSet #numberOfBombs {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform: translateY(0);
+}
+
+header #numberOfBombs #bombimage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+	font-size: 1.8rem;
+}
+
+header #numberOfBombs #numArea {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 120px;
+}
+header #numberOfBombs #num {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 120px;
+	height: 100%;
+	border-radius: 5px;
+
+	font-size: 3rem;
+	font-weight: bold;
+	text-align: center;
+
+	box-shadow: 0 5px 5px gray;
+}
+header #numArea .numUpDown {
+	content: "";
+	position: relative;
+
+	width: 30px;
+	height: 100px;
+	margin: 0 15px;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0 2px 5px rgb(15, 15, 61);
+}
+header #numArea .numUpDown:active {
+	box-shadow: 0 2px 1px rgb(15, 15, 61);
+	top: 4px;
+}
+
+header #numArea .numUpDown::before {
+	content: "";
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+
+	width: 0;
+	height: 0;
+	border-style: solid;
+
+	filter: drop-shadow(0 2px 2px gray);
+}
+header #numArea .numUpDown:first-child::before {
+	border-width: 15px 10px 15px 0;
+	border-color: transparent dodgerblue transparent transparent;
+}
+header #numArea .numUpDown:last-child::before {
+	border-width: 15px 0 15px 10px;
+	border-color: transparent transparent transparent dodgerblue;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	appearance: none;
+}
+
+header #numberOfBombs #set {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-bottom: 20px;
+
+	width: 40%;
+	height: 15%;
+	background-image: linear-gradient(
+		to bottom right,
+		rgb(250, 232, 69) 60%,
+		rgb(211, 211, 211)
+	);
+	border-radius: 10px 10px 20% 20%;
+	box-shadow: 2px 5px 5px grey;
+	color: rgb(24, 24, 107);
+	cursor: pointer;
+}
+
+header #numberOfBombs #set:active {
+	top: 4px;
+	box-shadow: 2px 2px 1px grey;
 }
 
 .content {
@@ -438,8 +698,8 @@ header span {
 }
 
 .option #restart:active {
-	box-shadow: none;
-	top: 5px;
+	box-shadow: 2px 2px 1px gray;
+	top: 4px;
 }
 
 @media screen and (max-width: 768px), (max-height: 1100px) {
@@ -490,6 +750,11 @@ header span {
 @media screen and (max-height: 1100px) {
 	header {
 		height: 8vh;
+	}
+
+	header #menu #button {
+		width: 8vmin;
+		height: 8vmin;
 	}
 
 	.content {
@@ -546,7 +811,7 @@ header span {
 	}
 }
 
-@media screen and (max-width: 768px) and (max-height: 600px) {
+@media screen and (max-width: 768px) and (max-height: 665px) {
 	.gameField {
 		width: 65vmin;
 		height: 65vmin;
@@ -557,6 +822,12 @@ header span {
 }
 
 @media screen and (max-width: 330px) {
+	header #menuButton::before {
+		top: -6px;
+	}
+	header #menuButton::after {
+		top: 6px;
+	}
 	.content .navbar {
 		width: 260px;
 	}
@@ -575,5 +846,11 @@ header span {
 @media screen and (max-height: 400px) {
 	.content {
 		top: 30px;
+	}
+	header #menuButton::before {
+		top: -6px;
+	}
+	header #menuButton::after {
+		top: 6px;
 	}
 }
