@@ -792,6 +792,12 @@ header #numberOfBombs #set:active {
 	.content {
 		top: min(8vmin, 80px);
 	}
+	header #menuButton::before {
+		top: -7px;
+	}
+	header #menuButton::after {
+		top: 7px;
+	}
 	.gameField {
 		width: 80vmin;
 		height: 80vmin;
@@ -823,10 +829,10 @@ header #numberOfBombs #set:active {
 
 @media screen and (max-width: 330px) {
 	header #menuButton::before {
-		top: -6px;
+		top: -5px;
 	}
 	header #menuButton::after {
-		top: 6px;
+		top: 5px;
 	}
 	.content .navbar {
 		width: 260px;
@@ -848,9 +854,9 @@ header #numberOfBombs #set:active {
 		top: 30px;
 	}
 	header #menuButton::before {
-		top: -6px;
+		top: -5px;
 	}
 	header #menuButton::after {
-		top: 6px;
+		top: 5px;
 	}
 }
