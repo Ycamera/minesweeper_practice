@@ -300,7 +300,7 @@ document
 	.getElementById("numDown")
 	.addEventListener("mousedown", numberOfbombsDown);
 document.getElementById("numUp").addEventListener("mousedown", numberOfbombsUp);
-document.addEventListener("click", function (e) {
+document.addEventListener("mousedown", function (e) {
 	let menu = document.getElementById("menu");
 	if (menu.classList.value === "active" && !e.target.closest("#menu")) {
 		hideMenu();
@@ -378,7 +378,7 @@ function numberOfBombsSet() {
 		}
 	}
 	start();
-	return false
+	return false;
 }
 
 //ゲームの進行管理ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
