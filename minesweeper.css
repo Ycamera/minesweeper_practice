@@ -650,6 +650,7 @@ header #numberOfBombs #set:active {
 }
 
 .option #restart {
+	z-index:1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
