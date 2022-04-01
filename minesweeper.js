@@ -283,12 +283,14 @@ function boom() {
 				randomX *= c[Math.floor(Math.random() * 2)];
 			}
 
-			let randomDeg = Math.random() * 360;
+			let randomDeg = Math.random() * 3;
+			let random3dX =
+				Math.random() * [1, -1][Math.floor(Math.random() * 2)];
 
 			if (!restartReady)
 				f.style.transform = `translateY(${
 					randomY + 5000
-				}%) translateX(${randomX}%) rotate(${randomDeg}deg)`;
+				}%) translateX(${randomX}%) rotate3D(1,0,${random3dX},${randomDeg}turn)`;
 		}, delay * i);
 	}
 }
