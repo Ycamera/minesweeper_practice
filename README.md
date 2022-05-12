@@ -4,6 +4,8 @@
 
 <h1>概要</h1>
 
+URL https://ycamera.github.io/minesweeper_project/
+
 一般的なWindowsに搭載されていたマインスイーパーをWEBサイトで再現しました。 
 
 制作期間は5日です（ゲームシステムの要件定義から構築に2日、CSS・アニメーションのブラッシュアップに3日）
